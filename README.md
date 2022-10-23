@@ -10,19 +10,22 @@ Forecasting the state of vegetation in response to climate and weather events is
 ### Explainable IA (XAI) 
 However, theses models have often a low explainability.  **Bring your own method**
 
+### Approach
+
 ### Work-breakdown structure 
  * Data collection: 0 hours
  * Data understanding and exploration: 15 hours
  ... understanding the distribution 
- * Framework: 15 hours
-  ...PyTorch lighnight framework
- * Optimisation: 30 hours
+ * Framework: 20 hours   
+PyTorch lighnight framework
+ * Optimisation: 20 hours   
+There is a potentially important grain to be gained through a more rigorous optimization (try different optimiser, use a schudeler) 
  * Explainability: 50 hours
- * Building an application: 30 hours
- ...I don't have any knowledge in web development or application, so it will probably take time and it is difficult to evaluate. The idea would be to develop a (simple) web page with an access to the model and a (sub)set of samples from the test test. Select a sample on the map, and generate its prediction as well as the analyses of the prediction.
+ * Building an application: 30 hours   
+I don't have any knowledge in web development or application, so it will probably take time and it is difficult to evaluate. The idea would be to develop a (simple) web page with an access to the model and a (sub)set of samples from the test test. Select a sample on the map, and generate its prediction as well as the analyses of the prediction.
  * Final report: 15 hours
  * Presentation: 10 hours
- * Total: 165 hours
+ * Total: 160 hours
 
 
 ### Bibliography
