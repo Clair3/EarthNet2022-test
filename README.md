@@ -1,12 +1,10 @@
-# XAI4EarthNet2022
+# EarthNet2022
 
 ### Context
 Forecasting the state of vegetation in response to climate and weather events is a major challenge. Requena and al. (2021) [1] define the land surface forecasting task as a strongly guided video prediction task where the objective is to forecast the vegetation developing at very fine resolution using topography and weather variables to guide the prediction and design a first dataset for this task, the EarthNet2021 dataset. Several papers have addressed this issue, namely [2, 3] on the EarthNet2021 dataset, and [3] focusing instead on Africa (freshly accepted! currently under review :D). See [4] for more details on context and the project.
 
 ### EarthNet2022, a new brand dataset
 The preivous dataset had severes issues, a bad cloud masking, and it was opinioned (all the values where interpolated to 10 daily. It is very easy to train deep learning models but hides the actual dynamics of the system). The new dataset is now available, it has a better cloud masking, the data are not anymore interpolated and it include new variables (Landsat climatology NDVI and Sentinel - 1 vegetation index), relevant for environnemental science.
-
-*Please note:* This new dataset will most likely **not be publicly available** by the end of the project. However, a sample (or few if needed) will be available, as well as the jupyters used to explore the data. 
 
 The variables are:
 * Sentinel 2 (B02 to B12 bands)
@@ -21,10 +19,13 @@ The variables are:
 
 The target is the Normalized Difference Vegetation Index (NDVI), a proxy for vegetation health monitoring calculated from the red and infrared bands.
 
+*Please note:* This new dataset will most likely **not be publicly available** by the end of the project. However, a sample (or few if needed) will be available, as well as the jupyters used to explore the data. 
 
 
-### Explainable IA (XAI) 
-However, theses models have often a low explainability.  **Bring your own method**
+### Irregularly sampled time series
+**Bring your own method**
+
+*Note:* I am aware that the papers are rather for temporal series without spatial components, which can represent an insurmountable difficulty in the given time of the project. If this is the case, the fallback plan would be to avoid the problem by interpolating all the data and get a regular time step, and I would orient the project on the explainability of a more basic ConvLSTM model, with more classical had-hoc methods. 
 
 ### Approach
 We need to build a new framework for this new dataset. Firstly, because 
@@ -44,7 +45,6 @@ I don't have any knowledge in web development or application, so it will probabl
  * Final report: 15 hours
  * Presentation: 10 hours
  * Total: 160 hours
-
 
 ### Bibliography
 [1] Christian Requena-Mesa, Vitus Benson, Markus Reichstein, Jakob Runge, and Joachim Denzler. Earthnet2021: A large-scale dataset and challenge for earth surface forecasting as a guided video prediction task. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, pages 1132–1142, 2021.
