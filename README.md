@@ -32,7 +32,7 @@ Then I need to develop a model for the data. The main point is that the data are
 
 A second solution, simpler to implement, consists in directly use the RNN methods developed for time series without spatial component. During the learning phase, the RNN is used only on a random subset of pixels, and the gradient is computed on these pixels. The idea is that in an image, and even more in a landscape, a large number of pixels are (almost) identical, and it is not necessary to compute the gradient for each pixels. In this way, we drastically reduce the learning time required for the use of a RNN on spatio-temporal data. This solution has shown good results with classical RNN, so it is promising for RNN adapted to irregular data. 
 
-Finally, I would like to develop a web application, the tricky part is that I have no knowledge of javascript at the moment, so it could be reduced to a docker, or a simple command line in case of lack of time. But ideally, on the web application, the user will be able to select a sample on a map of Africa, then generate the prediction with some associated analysis. 
+Finally, I would like to develop a web application, the tricky part is that I have no knowledge of javascript at the moment, so it could be reduced to a docker, or a simple command line in case of lack of time. But ideally, on the web application, the user will be able to select a sample on the map of Africa, then generate its prediction with some associated analysis. 
 
 ### Work-breakdown structure 
  * Data collection: 0 hours
@@ -43,7 +43,6 @@ PyTorch lighnight framework (already implemented?)
  * Model for irregularly sampled time series: 50 hours
  * Optimisation: 20 hours 
  * Building an application: 40 hours   
-I don't have any knowledge in web development or application, so it will probably take time and it is difficult to evaluate. The idea would be to develop a (simple) web page with an access to the model and a (sub)set of samples from the test test. Select a sample on the map, and generate its prediction as well as the analyses of the prediction.
  * Final report: 15 hours
  * Presentation: 10 hours
  * Total: 155 hours
