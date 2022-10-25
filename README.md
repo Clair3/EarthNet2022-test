@@ -1,7 +1,7 @@
 # EarthNet2022
 
 ### Context
-Forecasting the state of vegetation in response to climate and weather events is a major challenge. Requena and al. (2021) [1] define the land surface forecasting task as a strongly guided video prediction task where the objective is to forecast the vegetation developing at very fine resolution using topography and weather variables to guide the prediction and design a first dataset for this task, the EarthNet2021 dataset. Several papers have addressed this issue, namely [2, 3] on the EarthNet2021 dataset, and [4] focusing instead on Africa (freshly accepted! :D currently under review, the pdf is in the repository, waiting for the arxiv link). See [4] for more details on context and the project.
+Forecasting the state of vegetation in response to climate and weather events is a major challenge. Requena and al. (2021) [1] define the land surface forecasting task as a strongly guided video prediction task where the objective is to forecast the vegetation developing at very fine resolution using topography and weather variables to guide the prediction and design a first dataset for this task, the EarthNet2021 dataset. Several papers have addressed this issue, namely [2, 3] on the EarthNet2021 dataset, and [4] focusing instead on Africa (freshly accepted! :D currently under review, the pdf is in the repository, waiting for the arxiv link). See [4] for more details on the project.
 
 ### EarthNet2022, a new brand dataset
 The new dataset  has a better cloud masking, the data are not anymore interpolated and it include new variables (Landsat climatology NDVI and Sentinel - 1 vegetation index), relevant for environnemental science. This also means that the data (from different sources) are irregularly sampled time series.
