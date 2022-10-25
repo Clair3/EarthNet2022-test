@@ -28,9 +28,9 @@ The objective to create a model capable of learning the relationship between veg
 
 the data have different dimensions (spatio-temporal, only temporal (for weather), or static (terrain topology), we will use the simplest solution which consists in resizing and concatenating everything to the spatio-temporal dimensions.
 
-Then I need to develop a model for the data. The main point is that the data are irregularly sampled time series (from different sources). Although several papers have addressed this issue for RNNs, we need to extend the methods to include the spatial dimension of our data. this will be our main axis of research. We will compare our results to a ConvLSTM baseline that does not take into account the time-step irregularity. 
+Then I need to develop a model for the data. The main point is that the data are irregularly sampled time series (from different sources). Although several papers have addressed this issue for RNNs [5-7], we need to extend the methods to include the spatial dimension of our data. this will be our main axis of research. We will compare our results to a ConvLSTM baseline that does not take into account the time-step irregularity. 
 
-A second solution, simpler to implement, consists in directly testing the methods developed for the RNN. During the learning phase, the RNN is used only on a random subset of pixels, and the gradient is computed on these pixels. The idea is that on an image, and even more on a landscape, a large number of pixels are (almost) identical, and it is not necessary to compute the gradient for each of these pixels. In this way, we drastically reduce the learning time required for the use of a RNN on spatio-temporal data. This solution has shown good results with classical RNN, so it is promising for RNN adapted to irregular data. 
+A second solution, simpler to implement, consists in directly use the RNN methods developed for time series without spatial component. During the learning phase, the RNN is used only on a random subset of pixels, and the gradient is computed on these pixels. The idea is that in an image, and even more in a landscape, a large number of pixels are (almost) identical, and it is not necessary to compute the gradient for each pixels. In this way, we drastically reduce the learning time required for the use of a RNN on spatio-temporal data. This solution has shown good results with classical RNN, so it is promising for RNN adapted to irregular data. 
 
 Finally, I would like to develop a web application, the tricky part is that I have no knowledge of javascript at the moment, so it could be reduced to a docker, or a simple command line in case of lack of time. But ideally, on the web application, the user will be able to select a sample on a map of Africa, then generate the prediction with some associated analysis. 
 
@@ -50,11 +50,16 @@ I don't have any knowledge in web development or application, so it will probabl
 
 
 ### Bibliography
-[1] Christian Requena-Mesa, Vitus Benson, Markus Reichstein, Jakob Runge, and Joachim Denzler. Earthnet2021: A large-scale dataset and challenge for earth surface forecasting as a guided video prediction task. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, pages 1132–1142, 2021.
+[1] Christian Requena-Mesa, Vitus Benson, Markus Reichstein, Jakob Runge, and Joachim Denzler. "Earthnet2021: A large-scale dataset and challenge for earth surface forecasting as a guided video prediction task." In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, pages 1132–1142, 2021.
 
-[2] Codrut-Andrei Diaconu, Sudipan Saha, Stephan Günnemann, and Xiao Xiang Zhu. Understanding the role of weather data for earth surface forecasting using a convlstm-based model. In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, pages 1362–1371, 2022.
+[2] Codrut-Andrei Diaconu, Sudipan Saha, Stephan Günnemann, and Xiao Xiang Zhu. "Understanding the role of weather data for earth surface forecasting using a convlstm-based model." In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, pages 1362–1371, 2022.
 
-[3] Klaus-Rudolf William Kladny, Marco Milanta, Oto Mraz, Koen Hufkens, and Benjamin David Stocker. Deep learning for satellite image forecasting of vegetation greenness. bioRxiv, 2022.
+[3] Klaus-Rudolf William Kladny, Marco Milanta, Oto Mraz, Koen Hufkens, and Benjamin David Stocker. "Deep learning for satellite image forecasting of vegetation greenness." bioRxiv, 2022.
 
-[4] Claire Robin, Christian Requena-Mesa, Vitus Benson, Lazaro Alonso, Jeran Poehls, Nuno Carvalhais, and Markus Reichstein. Learning to forecast vegetation greenness at fine resolution over Africa with ConvLSTMs. In *Tackling Climate Change with Machine Learning workshop, NeurIPS 2022*.
+[4] Claire Robin, Christian Requena-Mesa, Vitus Benson, Lazaro Alonso, Jeran Poehls, Nuno Carvalhais, and Markus Reichstein. "Learning to forecast vegetation greenness at fine resolution over Africa with ConvLSTMs". In *Tackling Climate Change with Machine Learning workshop, NeurIPS 2022*.
 
+[5] Shukla, Satya Narayan, and Benjamin M. Marlin. "A survey on principles, models and methods for learning from irregularly sampled time series." arXiv preprint arXiv:2012.00168 (2020).
+
+[6] Schirmer, Mona, et al. "Modeling irregular time series with continuous recurrent units." In *International Conference on Machine Learning. PMLR, 2022*.
+
+[7] Rubanova, Yulia, Ricky TQ Chen, and David K. Duvenaud. "Latent ordinary differential equations for irregularly-sampled time series." Advances in neural information processing systems 32 (2019).
